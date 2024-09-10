@@ -1,0 +1,15 @@
+.giving-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.25s ease-in;
+}
+.giving-button i {
+  margin-right: 0.75em;
+}
+.giving-button:hover, .giving-button:focus {
+  border: 1px solid;
+}/*# sourceMappingURL=giving-button.css.map */

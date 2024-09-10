@@ -1,0 +1,48 @@
+// main: ../../../../../style.scss
+.staff-category-members {
+    flex-wrap: wrap;
+
+    .staff-name {
+      margin-bottom: 0;
+    }
+    .staff-position {
+      margin: 0;
+    }
+    .teaser-content a {
+      color: var(--clr-primary);
+    }
+    @media screen and (min-width: $tablet) {
+        margin-left: -25px;
+        > .staff-single {
+            margin-left: 25px;
+        }
+    }
+    @media screen and (min-width: $tablet) and (max-width: $desktop){
+        .staff-single {
+          max-width: 230px;
+        }
+    }
+    @media screen and (min-width: $desktop) {
+
+        .staff-single {
+          max-width: 230px;
+          a {
+            aspect-ratio: 229 / 250;
+            img {
+              aspect-ratio: 229 / 250;
+              object-fit: cover;
+            }
+          }
+        }
+        .staff-single:nth-child(3n + 1) {
+            // margin-left: 0px;
+        }
+    }
+}
+
+img.staff-image.teaser-img {
+    width: 230px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 17px;
+}

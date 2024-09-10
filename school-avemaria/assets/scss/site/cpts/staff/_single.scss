@@ -1,0 +1,79 @@
+// main: ../../../../../style.scss
+// .single-staff {
+    .staff-name,
+    .staff-position,
+    .teaser-content {
+        margin: 0;
+        a {
+          color: var(--clr-primary);
+          text-decoration: none;
+        }
+    }
+    .staff-position {
+      color: var(--clr-secondary);
+    }
+    .links-container {
+        align-items: center;
+    }
+    @media screen and (min-width: $tablet) {
+        .staff-name,
+        .staff-position,
+        .teaser-content {
+            // text-align: unset;
+        }
+        .links-container {
+            align-items: flex-start;
+        }
+    }
+
+    .single-container article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .single-top {
+            display: flex;
+            margin-top: 15vh;
+            width: 100%;
+            a {
+                word-break: break-word;
+                transition: color 0.25s ease-in;
+                color: var(--clr-primary);
+                text-decoration: none !important;
+            }
+            .single-thumbnail {
+              img {
+                border-radius: 17px;
+              }
+            }
+            .single-info {
+              h1.single-title {
+                margin: 0;
+              }
+              h4.single-title {
+                font-size: 30px;
+                margin-top: 1rem;
+                margin-bottom: 0;
+              }
+              .staff-position {
+                margin: 0;
+                font-size: 19px;
+                font-weight: 400;
+              }
+            }
+        }
+        .single-content {
+            width: 100%;
+            .simcal-calendar {
+                li {
+                    display: block;
+                    a {
+                        &:hover,
+                        &:focus {
+                            color: inherit !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+// }

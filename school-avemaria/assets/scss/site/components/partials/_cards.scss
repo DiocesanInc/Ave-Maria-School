@@ -1,0 +1,58 @@
+// main: ../../../../../style.scss
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1.5rem 0.9rem;
+
+    // .staff-name {
+    //   margin-bottom: 0;
+    // }
+    // .staff-position {
+    //   margin: 0;
+    // }
+    .teaser-content a {
+      color: var(--clr-primary);
+    }
+    @media screen and (min-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    // @media screen and (min-width: $tablet) and (max-width: $desktop){
+    //   .staff-single:nth-child(2n + 1) {
+    //       margin-left: 0px;
+    //   }
+    // }
+    @media screen and (min-width: $desktop) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem 0.9rem;
+        // .staff-single {
+        //   max-width: 230px;
+        //   a {
+        //     aspect-ratio: 229 / 250;
+        //     img {
+        //       aspect-ratio: 229 / 250;
+        //       object-fit: cover;
+        //     }
+        //   }
+        // }
+        // .staff-single:nth-child(3n + 1) {
+        //     margin-left: 0px;
+        // }
+        // .staff-single:first-child {
+        //     grid-column: 1 / -1;
+        //     flex-direction: row;
+        //     .teaser-img {
+        //         border-radius: 10px 0 0 10px;
+        //         flex: 2;
+        //     }
+        //     .teaser-content-wrapper {
+        //         width: 100%;
+        //         text-align: center;
+        //         flex: 3;
+        //     }
+        //     .links-container {
+        //         align-items: center;
+        //     }
+        // }
+    }
+}

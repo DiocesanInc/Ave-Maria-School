@@ -1,0 +1,79 @@
+.search-form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &::after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: black;
+        opacity: 0.65;
+    }
+    .search-form-wrapper {
+        position: relative;
+        top: 50%;
+        right: 50%;
+    }
+    .close-search-form-button {
+        cursor: pointer;
+        top: -30px;
+        right: -140px;
+        height: 20px;
+        width: 135px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        color: white;
+        z-index: 1;
+        transition: color 0.3s ease-in-out;
+        &::before,
+        &::after {
+            width: 5px;
+            height: 100%;
+            right: 20px;
+            background: white;
+            position: absolute;
+            content: "";
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+    .search-form {
+        position: absolute;
+        right: 0;
+        transform: scale(1, 0) translateX(50%);
+        z-index: 1;
+        display: flex;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease;
+        &.open {
+            transform: scale(1, 1) translateX(50%);
+        }
+        .search-field {
+            outline: none;
+            box-shadow: none;
+            border: none;
+            border-radius: 10px 0 0 10px;
+            height: 100%;
+        }
+        .search-submit {
+            border-radius: 0 10px 10px 0;
+            background: var(--menu-top-level-default-bg-color);
+            color: var(--menu-top-level-default-font-color);
+            &:hover {
+                color: var(--menu-top-level-default-bg-color);
+                background: var(--menu-top-level-default-font-color);
+            }
+        }
+    }
+}

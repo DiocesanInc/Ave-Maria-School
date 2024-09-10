@@ -1,0 +1,77 @@
+// main: ../../../../../style.scss
+.stats-container {
+  box-shadow: none;
+  --limit-width: 60%;
+  width: var(--limit-width);
+  .statsIcons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+    .stat {
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+      max-width: 160px;
+      text-align: center;
+      width: 50%;
+      i {
+        color: var(--stat-icon-color);
+        &::before {
+          font-size: 60px;
+        }
+      }
+      .stat-text {
+        color: var(--stat-text-color);
+      }
+    }
+  }
+  .statsInfo {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: var(--paragraph-font-size);
+    }
+  }
+  @media screen and (min-width: $phone){
+    .statsIcons {
+      flex-direction: row;
+    }
+  }
+  @media screen and (min-width: $tablet){
+  }
+  @media screen and (min-width: $laptop){
+    --limit-width: 80%;
+    .statsIcons {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      margin-right: 5%;
+      justify-content: space-evenly;
+      .stat {
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        max-width: 160px;
+        text-align: center;
+        width: 33%;
+        i {
+          &::before {
+            font-size: 60px;
+          }
+        }
+      }
+    }
+    .statsInfo {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      p {
+        font-size: var(--paragraph-font-size);
+      }
+    }
+  }
+  @media screen and (min-width: $desktop){
+  }
+}

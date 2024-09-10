@@ -1,0 +1,11 @@
+// main: ../../../../style.scss
+.site-footer {
+    padding: 0;
+    position: relative;
+    --gradient-angle: 180deg;
+    --link-color: #fff;
+    @include overlay(var(--clr-primary), var(--clr-secondary));
+    @import "footer";
+    @import "site-info";
+    @import "content";
+}

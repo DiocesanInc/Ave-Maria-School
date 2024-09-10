@@ -1,0 +1,27 @@
+// main: ../../../../../style.scss
+.lower-banner.banner-container {
+  justify-content: space-between;
+  h4 {
+    margin-bottom: 0;
+  }
+  img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  .teaser-content-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (min-width: $tablet) {
+.lower-banner.banner-container {
+    .teaser-content-wrapper {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: $laptop) {
+  .lower-banner.banner-container {
+    flex-direction: row-reverse;
+  }
+}

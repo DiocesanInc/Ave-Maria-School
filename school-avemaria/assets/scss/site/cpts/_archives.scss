@@ -1,0 +1,13 @@
+// main: ../../../../../style.scss
+@import "ministry/archive";
+
+.archive {
+    @import "ministry/taxonomy";
+    @import "staff/archive";
+
+    .no-results {
+        input[type="submit"] {
+            cursor: pointer;
+        }
+    }
+}

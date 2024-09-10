@@ -1,0 +1,37 @@
+// main: ../../../../../style.scss
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    .featured-content-item-wrapper {
+        margin-bottom: 2rem;
+        .teaser-img {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .featured-content {
+        flex-direction: row;
+    }
+    .featured-content-item-wrapper {
+        width: 33%;
+    }
+}
+
+// @media screen and (min-width: $tablet) and (max-width: $laptop){
+//     .featured-content {
+//       .teaser-box {
+//         width: 50%;
+//       }
+//       .teaser-box + .teaser-box {
+//         margin-left: 0;
+//       }
+//       .teaser-box:nth-child(2n) {
+//         margin-left: 2rem;
+//       }
+//     }
+// }

@@ -1,0 +1,57 @@
+// main: ../../../style.scss
+button {
+    cursor: pointer;
+}
+
+.hentry {
+    margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 0 auto 2rem;
+    .single-container {
+        display: flex;
+        width: 100%;
+        margin-top: 2.75rem;
+        .single-thumbnail {
+            float: left;
+            margin: 0 1.5rem 1.5rem 0;
+            max-width: 25rem;
+        }
+        .single-content {
+            .single-title {
+                margin-top: 0 !important;
+            }
+        }
+    }
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+.separator-graphic {
+    display: block;
+    margin: 30px auto;
+}
+
+@import "components/partials/alm";
+.clearfix::after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    content: "";
+    height: 0;
+}
+
+.dpi-bulletins-tab--image {
+    max-width: 300px;
+}

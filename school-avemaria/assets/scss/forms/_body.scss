@@ -1,0 +1,15 @@
+// main: ../../../style.scss
+.gform_body {
+    margin-bottom: 2rem;
+    input,
+    textarea {
+        border-radius: 6px;
+        border: 1px solid #bebebe;
+        &:focus-visible {
+            outline-color: var(--clr-primary);
+        }
+    }
+    textarea {
+        resize: none;
+    }
+}

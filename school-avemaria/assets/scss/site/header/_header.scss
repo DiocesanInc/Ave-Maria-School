@@ -1,0 +1,79 @@
+// main: ../../../../style.scss
+.admin-bar .site-header#masthead {
+  padding-top: 42px;
+}
+.site-header#masthead {
+    position: absolute;
+    padding: 10px 0;
+    width: 100%;
+    height: auto;
+    transition: 0.25s ease-in;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    .the-header {
+        position: relative;
+        width: 100%;
+        @import "bottom-bar";
+        .header_logo.top {
+            display: block;
+        }
+        .header_logo.sticky {
+            display: none;
+        }
+    }
+    &.sticky .the-header {
+        .header_logo.sticky {
+            display: block;
+        }
+        .header_logo.top {
+            display: none;
+        }
+    }
+    @import "../../navigation/sticky";
+}
+
+.home .site-header#masthead {
+  &.is-transparent.home-transparent-background-color {
+      background: transparent;
+      --menu-top-level-default-font-color: #fff;
+  }
+}
+
+body:not(.home) .site-header#masthead {
+      box-shadow: var(--box-shadow);
+    //   background-color: #fff;
+      // .header_logo.sticky {
+      //     display: block;
+      // }
+      // .header_logo.top {
+      //     display: none;
+      // }
+      .mega-toggle-blocks-right .mega-toggle-block::before {
+        //   color: var(--clr-primary);
+      }
+      #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-animated-inner,
+      #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-animated-inner::before,
+      #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-animated-inner::after {
+        //   background-color: var(--clr-primary);
+      }
+}
+
+@media screen and (max-width: $desktop){
+  .site-header#masthead {
+    min-height: 115px;
+  }
+}
+@media screen and (min-width: 1201px){
+  body:not(.home) .site-header#masthead {
+    .top-bar, .bottom-bar {
+      .mega-menu-wrap > .mega-menu > li > a.mega-menu-link{
+        //   color: var(--clr-primary, var(--color-white)) !important;
+      }
+    }
+    .header-search {
+        // color: var(--clr-primary);
+        // border-color: var(--clr-primary);
+    }
+  }
+}

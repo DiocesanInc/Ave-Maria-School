@@ -1,0 +1,22 @@
+// main: ../../../../../style.scss
+.page-template-homepage {
+    .banner-container,
+    .featured-content-container,
+    .image-slider-container,
+    .news-container {
+        margin-bottom: 6rem;
+        &.calendar-container {
+          margin-bottom: 0;
+        }
+    } 
+    @import "hero";
+    @import "featured-buttons";
+    @import "banner2";
+    @import "banner";
+    @import "featured-content";
+    @import "image-slider";
+    @import "news";
+    @import "stats";
+    @import "lower-banner";
+    @import "calendar";
+}

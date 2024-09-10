@@ -1,0 +1,202 @@
+// main: ../../../style.scss
+
+.page-template-landing {
+  .slideLinks {
+    display: none;
+  }
+  .landingWrapper{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(var(--clr-secondary), var(--clr-primary));
+    .landingHalf {
+      z-index: 1;
+      box-shadow: 0 3px 6px #00000029;
+      margin: 30px 33px 0;
+      border-radius: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      background-size:cover;
+      background-size: auto 110%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-size .3s ease-in-out;
+      height: 100vh !important;
+      + .landingHalf {
+        margin-bottom: 30px;
+      }
+      &::after {
+        background: linear-gradient(#414141 33%, #515151 66%, #0D0D0D 100%);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .65;
+        z-index: 0;
+        border-radius: 34px;
+      }
+
+      .landingInfo {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color:#ffffff;
+        text-align: center;
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        animation-delay: 1s;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+       &.fadein{
+         opacity:0;
+         opacity: 1 \9; /*just in case ie*/
+         -webkit-animation:fadeIn ease-in 1;
+         -moz-animation:fadeIn ease-in 1;
+         animation:fadeIn ease-in 1;
+
+         -webkit-animation-fill-mode:forwards;
+         -moz-animation-fill-mode:forwards;
+         animation-fill-mode:forwards;
+
+         -webkit-animation-duration:.6s;
+         -moz-animation-duration:.6s;
+         animation-duration:.6s;
+        }
+        img.landingPaulLogo {
+          margin:0 auto;
+          max-width: 230px;
+        }
+        .landingButton{
+          -webkit-animation-delay: 1.5s;
+          -moz-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+          z-index: 2;
+          .landingHalfButton a{
+            display: block;
+            width: max-content;
+            font-size: 20px;
+            line-height: 30px;
+            color:#ffffff;
+            padding: 5px 35px;
+            background:transparent;
+            border:1px solid #ffffff;
+            border-radius: 15px;
+            margin:10px auto;
+            font-family: "Open Sans", sans-serif;
+            text-decoration: none;
+            &:hover {
+              background: var(--clr-secondary);
+              color: #fff;
+            }
+          }
+        }
+      }
+      .landingHalfImage {
+        border-radius: 34px;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-size .3s ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop){
+  body.page-template-landing.shiftnav-disable-shift-body{
+    padding-top:0!important;
+  }
+  .page-template-landing {
+    .landingTopInfo p {
+        line-height: 16px;
+    }
+    @-webkit-keyframes fadeIn {
+       from { opacity:0; transform:translateY(0); } to { opacity:1; transform:translateY(-20px); }
+     }
+    @-moz-keyframes fadeIn {
+       from { opacity:0; transform:translateY(0); } to { opacity:1; transform:translateY(-20px); }
+     }
+    @keyframes fadeIn {
+       from { opacity:0; transform:translateY(0); } to { opacity:1; transform:translateY(-20px); }
+     }
+    img.landingPaulLogo{
+      max-width: 200px;
+    }
+    .landingWrapper .slick-list, .landingWrapper .slick-track {
+      height: 100%;
+    }
+    .landingWrapper .landingHalf {
+      border-radius: 0;
+      margin: 0;
+      width:100%;
+    }
+    .landingWrapper .landingHalf:after{
+      content:"";
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      opacity:.7;
+      z-index: 0;
+      border-radius: 0;
+    }
+    .landingHalf.landingLeft .landingInfo:hover .landingHalfMessage, .landingHalf.landingRight .landingInfo:hover .landingHalfMessage{
+      margin:15px 0;
+    }
+    .landingLeft:after, .landingRight:after{
+      background-color: #313131;
+    }
+    .landingWrapper .landingHalf .landingHalfImage {
+      border-radius: 0;
+    }
+    .slideLinks {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 9rem;
+      left: 4rem;
+      .slick-list {
+        padding: 0 !important;
+      }
+      .slick-track {
+        width: 100% !important;
+        display: flex !important;
+        transform: translate3d(0px, 0px, 0px) !important;
+        .slideLink {
+          margin-right: 25px;
+          color: #fff;
+          border-top: 3px solid #fff;
+          padding-top: 5px;
+          width: 100% !important;
+          opacity: .5;
+          font-weight: 700;
+          font-size: 14px;
+          text-decoration: none;
+          &.slick-current {
+            opacity: 1;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .page-template-landing #shiftnav-toggle-main{
+    display: none;
+  }
+}

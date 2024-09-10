@@ -1,0 +1,35 @@
+// main: ../../../style.scss
+body.category {
+    .site-main {
+        .result-container {
+            margin-top: 3.75rem;
+            .alm-reveal {
+                display: grid;
+                grid-template-columns: 100%;
+                gap: 1.5rem 0.9rem;
+                .alm-item {
+                  padding-left: 0 !important;
+                  .teaser-img {
+                    max-width: none;
+                    width: 100%;
+                    position: relative;
+                  }
+                }
+                @media screen and (min-width: $tablet) {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+                @media screen and (min-width: $desktop) {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.5rem 0.9rem;
+                }
+            }
+            .alm-btn-wrap .done {
+                display: none;
+            }
+        }
+        & > p {
+            display: none;
+        }
+    }
+}

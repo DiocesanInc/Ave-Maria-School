@@ -1,0 +1,111 @@
+// main: ../../../../../style.scss
+.page-header-title {
+  margin: 15vh auto 0 !important;
+}
+  .page-header {
+    display: none;
+  }
+  .mass-times.site-main {
+    margin-top: 5vh;
+    position: relative;
+    .mass-times-background {
+      position: absolute;
+      width: 100%;
+      height: 70%;
+      left: 0;
+      bottom: 0;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#fff, transparent);
+        left: 0;
+        top: -1px;
+      }
+    }
+    .entry-content {
+      margin-bottom: 0 !important;
+    }
+  }
+  .mass-times.grid-container {
+    padding-bottom: 20vh;
+    .mass-times-section {
+      border-radius: 19px;
+      background: #EBEBEB;
+      padding: 20px 30px;
+      width: 100%;
+      margin-bottom: 40px;
+      .mass-times-title {
+        margin: 0;
+      }
+      .mass-time-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        .mass-time {
+          width: 48%;
+          .mass-time-day {
+            margin: 5px 0 0;
+          }
+          .mass-time-time {
+            margin: 5px 0 0;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $tablet){
+      .mass-times.grid-container {
+        margin-bottom: 40px;
+        .mass-times-section {
+          .mass-time-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+          }
+        }
+      }
+  }
+  @media screen and (min-width: $laptop){
+      .mass-times.grid-container {
+        margin-bottom: 40px;
+        .mass-times-section {
+          width: calc(50% - 40px);
+        }
+      }
+  }
+// &.mass-times {
+//     @include flex("a");
+//     &>div {
+//         flex: 1;
+//     }
+//     .mass-times-section {
+//         @include flex("fs", column);
+//         flex: unset;
+//         text-align: center;
+//         width: calc(50% - 0.5rem);
+//         margin: 0 1rem 1rem 0;
+//         .mass-times-title {
+//             margin-bottom: 0.75rem !important;
+//         }
+//         &:nth-of-type(even) {
+//             margin-right: 0;
+//         }
+//         @media screen and (max-width: 767px) {
+//             width: 100%;
+//         }
+//     }
+//     .mass-time {
+//         @include flex("fs", column);
+//         margin-bottom: 1rem;
+//         .mass-time-label {
+//             font-size: 1.375rem; // 22px
+//             font-weight: 600;
+//             margin-bottom: 0.625rem !important;
+//         }
+//         .mass-time-detail {
+//             font-size: 1.125rem;
+//         }
+//     }
+// }

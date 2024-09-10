@@ -1,0 +1,16 @@
+// main: ../../../style.scss
+&.sticky {
+    position: fixed;
+    box-shadow: var(--box-shadow);
+    &.has-white-background-color {
+        color: var(--font-color-main);
+        .mega-toggle-blocks-right .mega-toggle-block::before {
+            color: var(--font-color-main);
+        }
+        #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-animated-inner,
+        #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-animated-inner::before,
+        #mega-menu-wrap-menu-1 .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-animated-inner::after {
+            background-color: var(--font-color-main);
+        }
+    }
+}

@@ -1,0 +1,8 @@
+// main: ../../../../style.scss
+.page-template-page-mass-times {
+    --limit-width: 50%;
+  .page-header-title {
+    font-size: var(--fs-1000);
+  }
+  @import "../components/partials/mass-times";
+}

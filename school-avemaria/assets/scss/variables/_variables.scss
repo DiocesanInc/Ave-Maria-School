@@ -1,0 +1,42 @@
+// main: ../../../style.scss
+* {
+    --gradient: linear-gradient(var(--gradient-angle, 90deg), var(--color-1, #000), var(--color-2, #fff));
+}
+
+:root {
+    
+    --clr-white: #fff;
+    --clr-black: #000;
+
+    --border-radius: 20px;
+
+    /** BUTTON **/
+    --border-width: 3px;
+    --button-padding: .5rem 1rem;
+    --button-padding-no-border: calc(.5rem + var(--border-width)) calc(1rem + var(--border-width));
+
+    --box-shadow: 0 20px 25px #293d4729;
+    .the-button {
+        --box-shadow: 0 10px 25px #293d4729;
+    }
+    .image-slider-container {
+        --box-shadow: 0 50px 66px #293d471a;
+    }
+
+    --paragraph-font-size: 20px;
+    --font-color-main: #1a1818;
+    --link-color-hover: inherit;
+    --link-text-decoration: none;
+    --link-text-decoration-color: inherit;
+    --link-text-decoration-hover: none; //instead animated with an after element
+    --link-text-decoration-hover-color: #1a1818;
+    /**HERO**/
+    --hero-height: 93vh;
+
+    --limit-width: 80%;
+    header,
+    footer,
+    .page-template-homepage {
+        --limit-width: 80%;
+    }
+}

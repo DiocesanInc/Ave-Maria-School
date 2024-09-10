@@ -1,0 +1,210 @@
+// main: ../../../../../style.scss
+.hero {
+    position: relative;
+    margin-bottom: 20px;
+    &.has-video {
+        height: var(--hero-height);
+        .hero-video {
+            margin-left: 50vw;
+            transform: translateX(-50%);
+        }
+    }
+    .slick-prev {
+      left: 8rem;
+    }
+    .slick-next {
+      left: 5rem;
+    }
+    .slick-prev, .slick-next {
+      bottom: 0;
+      display: none !important;
+    }
+    .hero-slide {
+        height: var(--hero-height);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-height: 60vh;
+    }
+    .hero-video {
+        width: auto;
+        height: 100%;
+    }
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(120deg, black, transparent);
+    }
+    .hero-info {
+        position: absolute;
+        display: none;
+        .hero-title {
+          width: 50%;
+            font-size: 35px;
+            margin-left: 4rem;
+        }
+        .hero-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .the-button {
+                font-size: var(--fs-500);
+                display: none;
+            }
+        }
+        .the-button + .the-button {
+            margin-top: 1.5rem;
+        }
+    }
+    .slick-dots {
+        bottom: 85px;
+        li.slick-active button,
+        li button:hover,
+        li button:focus {
+            background: white;
+        }
+    }
+    .slideLinks.desktop {
+      display: none;
+    }
+    .slideLinksContainer {
+      display: flex;
+      .slick-prev, .slick-next {
+        display: block !important;
+      }
+    }
+    .slideLinksContainer.mobile, .slideLinks.desktop {
+      // justify-content: space-between;
+      padding: 2rem 4rem;
+      background: var(--clr-secondary);
+      min-height: 250px;
+      flex-direction: column;
+      .slideTitleMobile {
+        position: unset;
+      }
+      .slick-list {
+        padding: 0 !important;
+      }
+      .slick-track {
+        width: 100% !important;
+        display: flex !important;
+        transform: translate3d(0px, 0px, 0px) !important;
+        .slideLink {
+          margin-right: 25px;
+          color: #fff;
+          border-top: 3px solid #fff;
+          padding-top: 5px;
+          width: 100% !important;
+          opacity: .5;
+          font-weight: 700;
+          font-size: 14px;
+          text-decoration: none;
+          &:not(.slideTitle) {
+            max-width: 100px;
+          }
+          &.slick-current {
+            opacity: 1;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          &.slideTitle {
+            font-size: 24px;
+            border-top: none;
+            display: none;
+            padding: 0;
+            margin: 10px 0 0;
+          }
+          &.slideTitle.slick-current {
+            display: block;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $phone) {
+     .slideLinksContainer.mobile, .slideLinks.desktop {
+        .slick-track .slideLink.slideTitle {
+          font-size: 30px;
+        }
+      }
+    }
+    @media screen and (min-width: $tablet) {
+     .slideLinksContainer.mobile, .slideLinks.desktop {
+        padding: 2rem 10rem;
+      }
+      .slick-prev {
+        left: 15rem;
+      }
+      .slick-next {
+        left: 12rem;
+      }
+    }
+
+    @media screen and (min-width: $laptop) {
+      .hero-slide {
+        max-height: none;
+      }
+      .slideLinksContainer.mobile {
+        display: none;
+      }
+      .slideLinks.desktop {
+        position: absolute;
+        bottom: 9rem;
+        left: 4rem;
+        background: transparent;
+        padding: 0;
+        min-height: 0;
+        display: block;
+      }
+     .slick-next,
+     .slick-prev {
+        bottom: 4rem;
+        display: block !important;
+     }
+     .slick-next {
+        left: 5rem !important;
+     }
+     .slick-prev {
+        left: 8rem !important;
+     }
+      .hero-slider {
+          margin-bottom: 0;
+      }
+      .hero-info {
+          bottom: 35%;
+          display: block;
+          .hero-links {
+              flex-direction: row;
+          }
+          .the-button + .the-button {
+              margin-top: 0;
+              margin-left: 1.5rem;
+          }
+      }
+      .slick-dots {
+          bottom: 50px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &.has-video {
+          max-height: var(--hero-height);
+          overflow: hidden;
+          height: auto;
+          .hero-video {
+              width: 100%;
+              height: auto;
+              margin-left: 0;
+              transform: none;
+          }
+      }
+      .hero-slide.parallax {
+          background-attachment: fixed;
+      }
+    }
+}

@@ -1,0 +1,50 @@
+// main: ../../../../../style.scss
+&.tax-ministry-group {
+  .taxonomy-description {
+    text-align: center;
+  }
+
+  .taxonomy-container {
+    margin: 0 auto;
+    .taxonomy-single {
+      .ministry-name {
+        margin: 0 0 0.5em !important;
+        .ministry-name-link {
+          text-decoration: none;
+          transition: color 0.25s ease-in;
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .ministry-text {
+        margin: 0;
+      }
+    }
+
+    .contact-person-wrapper {
+      margin-bottom: 20px;
+    }
+
+    img.staff-image.teaser-img {
+        width: fit-content;
+        height: auto;
+        max-height: none;
+        min-height: none;
+        object-fit: cover;
+        border-radius: 17px;
+    }
+
+  }
+
+  @media screen and (max-width: 1399px) {
+    .taxonomy-container {
+      .taxonomy-single {
+        .read-more-link {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

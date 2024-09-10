@@ -1,0 +1,45 @@
+// main: ../../../../../style.scss
+.ministries-container {
+    .ministry-slider {
+        .ministry-group {
+            .slick-arrow {
+                border-color: white;
+                color: white;
+                top: 50%;
+                transform: translateY(-50%);
+                &.slick-disabled {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+            .slick-next {
+                right: -10%;
+            }
+            .slick-prev {
+                left: -10%;
+            }
+            .slick-list {
+                overflow: visible;
+                .ministry-wrapper {
+                    margin: 0 0.5rem 3rem;
+                    position: relative;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: #404040;
+                        opacity: 0;
+                        border-radius: 15px;
+                        transition: opacity 0.4s ease;
+                    }
+                    &:not(.slick-active)::after {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+}

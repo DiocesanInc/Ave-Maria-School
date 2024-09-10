@@ -1,0 +1,27 @@
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+        86deg,
+        var(--clr-primary) 0%,
+        var(--clr-primary-2) 85%,
+        var(--clr-primary-2) 100%
+    );
+    background-size: auto 200% !important;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-position: center bottom;
+}
+
+@supports (scrollbar-color: var(--color-primary) var(--color-primary-2)) {
+    * {
+        scrollbar-color: var(--color-primary-2) white;
+    }
+}
