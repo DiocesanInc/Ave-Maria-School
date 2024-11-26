@@ -22,7 +22,7 @@ $headingBackgroundColor = get_field("accordion_colors", "options") ? get_field("
     <main class="site-main" id="main">
         <?php if(have_posts()) : ?>
         <div class="entry-content limit-width">
-            <?php if(get_post_type() === 'ministry' && term_description()) : ?>
+            <?php if(term_description()) : ?>
             <div class="<?php echo get_post_type(); ?>-description taxonomy-description">
                 <?php echo term_description(); ?>
             </div>
@@ -47,11 +47,11 @@ $headingBackgroundColor = get_field("accordion_colors", "options") ? get_field("
                         ),
                     )
                 );
-                if (is_archive()) {
-                    if (is_tax()) {
-                      echo '<div class="form">'.do_shortcode(get_sub_field('ministry_group_form',$wp_query->get_queried_object()->term_id)).'</div>';
-                    }
-                }?>
+                // if (is_archive()) {
+                //     if (is_tax()) {
+                //       echo '<div class="form">'.do_shortcode(get_sub_field('ministry_group_form',$wp_query->get_queried_object()->term_id)).'</div>';
+                //     }
+                // }?>
 
                 <div class="tabs-container" data-active="">
                   <div class="tabs-bar closed" style="background: <?php echo $headingBackgroundColor;?>;">
@@ -65,22 +65,7 @@ $headingBackgroundColor = get_field("accordion_colors", "options") ? get_field("
                     </div>
                   </div>
 
-                  <div class="tabs-content">
-                    <?php while($q->have_posts()) : $q->the_post();?>
-                      <div class="tab-content" id="tab-<?php the_ID(); ?>">
-
-                          <?php get_template_part('template-parts/cpts/singles/single', 'ministry');?>
-
-                      </div>
-                    <?php endwhile; wp_reset_postdata();?>
-                  </div>
                 </div>
-            </div>
-            <div class="back-button-container align-center" <?php echo TemplateController::animate("fade-up"); ?>>
-                <p>Go back to all ministries</p>
-                <a href="/church/ministries"
-                    class="the-button"
-                    title="ministries">Go Back</a>
             </div>
         </div>
         <?php else :

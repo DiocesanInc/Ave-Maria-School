@@ -83,7 +83,6 @@ class TemplateController
                 $title = "Our Staff";
             } elseif (is_tax()) {
                 $title = preg_replace("/^([\w ]+)Group:\s+/i", "", get_the_archive_title());
-                $bkgd = get_field('ministry_group_image', get_queried_object()->taxonomy . '_' . get_queried_object()->term_id) ? get_field('ministry_group_image', get_queried_object()->taxonomy . '_' . get_queried_object()->term_id)['url'] : get_field('ministry_featured_image', 'options')['url'];//ministry_taxonomy_image();
             } else {
                 $title = str_replace("Category: ", "", str_replace("Archives: ", "", get_the_archive_title()));
             }

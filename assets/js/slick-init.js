@@ -216,35 +216,4 @@ jQuery(document).ready(function ($) {
   );
   $sliderArrows.attr("data-aos", "fade-down");
 
-  /** Ministry Slider */
-  $(".ministries-container .ministry-slider .ministry-group").slick({
-    autoplay: false,
-    arrows: true,
-    dots: false,
-    infinite: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    mobileFirst: true,
-    slide: ".ministry-wrapper",
-    responsive: [
-      {
-        breakpoint: tablet,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: laptop,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: desktop,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-    ],
-  });
 });
