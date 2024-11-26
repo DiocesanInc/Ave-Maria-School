@@ -144,3 +144,7 @@ if (!function_exists("getField")) {
         __FILE__,
         'school-avemaria'
     );
+
+    //Set the branch that contains the stable release.
+    $myUpdateChecker->setBranch('main');
+    
