@@ -136,16 +136,16 @@ $genericCss->addCssRule(
 $genericCss->addCssRule(
     ".page-header-title, .hero-title",
     array(
-        "color" => get_field("page_header", "options")["font_color"],
-        "font-weight" => get_field("page_header", "options")["font_weight"],
-        "font-style" => get_field("page_header", "options")["font_style"],
-        "font-family" => "var(--font-" . get_field("page_header", "options")["font_family"] . ")",
+        "color" => get_field("page_header", "options")["font_color"] ?? '',
+        "font-weight" => get_field("page_header", "options")["font_weight"] ?? '',
+        "font-style" => get_field("page_header", "options")["font_style"] ?? '',
+        "font-family" => "var(--font-" . get_field("page_header", "options")["font_family"] ?? '' . ")",
     )
 );
 
 for ($i = 0; $i <= 6; $i++) :
     $heading = get_field("heading_$i", "options");
-    switch ($heading['font_family']) {
+    switch ($heading['font_family'] ?? '') {
         case 'heading':
             $font = "var(--font-heading)";
             break;
@@ -158,10 +158,10 @@ for ($i = 0; $i <= 6; $i++) :
     $genericCss->addCssRule(
         "h$i",
         array(
-            "font-weight" => $heading["font_weight"],
-            "font-style" => $heading["font_style"],
+            "font-weight" => $heading["font_weight"] ?? '',
+            "font-style" => $heading["font_style"] ?? '',
             "font-family" => $font,
-            "color"     => $heading['font_color']
+            "color"     => $heading['font_color'] ?? ''
         )
     );
 endfor;
@@ -268,33 +268,33 @@ $genericCss->addCssRule(
         "--menu-top-level-default-font-color" => get_field('menu_colors', 'options')['top_level_default']['default_font_color'],
         "--menu-top-level-hover-font-color" => get_field('menu_colors', 'options')['top_level_default']['font_color_hover'],
         "--menu-top-level-default-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_default']['default_bg_color'], get_field('menu_colors', 'options')['top_level_default']['default_bg_color_is_gradient']),
-        "--menu-top-level-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_default']['bg_color_hover'], get_field('menu_colors', 'options')['top_level_default']['bg_color_hover_is_gradient']),
+        "--menu-top-level-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_default']['bg_color_hover'], get_field('menu_colors', 'options')['top_level_default']['bg_color_hover_is_gradient'] ?? ''),
         "--menu-submenu-header-font-color" => get_field('menu_colors', 'options')['submenu_default']['header_font_color'],
         "--menu-submenu-header-font-color-hover" => get_field('menu_colors', 'options')['submenu_default']['header_font_color_hover'],
         "--menu-submenu-default-font-color" => get_field('menu_colors', 'options')['submenu_default']['default_font_color'],
         "--menu-submenu-hover-font-color" => get_field('menu_colors', 'options')['submenu_default']['font_color_hover'],
         "--menu-submenu-default-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_default']['default_bg_color'], get_field('menu_colors', 'options')['submenu_default']['default_bg_color_is_gradient']),
-        "--menu-submenu-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_default']['bg_color_hover'], get_field('menu_colors', 'options')['submenu_default']['bg_color_hover_is_gradient']),
+        "--menu-submenu-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_default']['bg_color_hover'], get_field('menu_colors', 'options')['submenu_default']['bg_color_hover_is_gradient'] ?? ''),
 
         "--sticky-menu-top-level-default-font-color" => get_field('menu_colors', 'options')['top_level_sticky']['default_font_color'],
         "--sticky-menu-top-level-hover-font-color" => get_field('menu_colors', 'options')['top_level_sticky']['font_color_hover'],
         "--sticky-menu-top-level-default-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_sticky']['default_bg_color'], get_field('menu_colors', 'options')['top_level_sticky']['default_bg_color_is_gradient']),
-        "--sticky-menu-top-level-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_sticky']['bg_color_hover'], get_field('menu_colors', 'options')['top_level_sticky']['bg_color_hover_is_gradient']),
+        "--sticky-menu-top-level-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_sticky']['bg_color_hover'], get_field('menu_colors', 'options')['top_level_sticky']['bg_color_hover_is_gradient'] ?? ''),
         "--sticky-menu-submenu-header-font-color" => get_field('menu_colors', 'options')['submenu_sticky']['header_font_color'],
         "--sticky-menu-submenu-header-font-color-hover" => get_field('menu_colors', 'options')['submenu_sticky']['header_font_color_hover'],
         "--sticky-menu-submenu-default-font-color" => get_field('menu_colors', 'options')['submenu_sticky']['default_font_color'],
         "--sticky-menu-submenu-hover-font-color" => get_field('menu_colors', 'options')['submenu_sticky']['font_color_hover'],
         "--sticky-menu-submenu-default-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_sticky']['default_bg_color'], get_field('menu_colors', 'options')['submenu_sticky']['default_bg_color_is_gradient']),
-        "--sticky-menu-submenu-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_sticky']['bg_color_hover'], get_field('menu_colors', 'options')['submenu_sticky']['bg_color_hover_is_gradient']),
+        "--sticky-menu-submenu-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_sticky']['bg_color_hover'], get_field('menu_colors', 'options')['submenu_sticky']['bg_color_hover_is_gradient'] ?? ''),
 
         "--sidebar-top-level-default-font-color" => get_field('menu_colors', 'options')['top_level_sidebar']['default_font_color'],
         "--sidebar-top-level-hover-font-color" => get_field('menu_colors', 'options')['top_level_sidebar']['font_color_hover'],
         "--sidebar-top-level-default-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_sidebar']['default_bg_color'], get_field('menu_colors', 'options')['top_level_sidebar']['default_bg_color_is_gradient']),
-        "--sidebar-top-level-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_sidebar']['bg_color_hover'], get_field('menu_colors', 'options')['top_level_sidebar']['bg_color_hover_is_gradient']),
+        "--sidebar-top-level-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['top_level_sidebar']['bg_color_hover'], get_field('menu_colors', 'options')['top_level_sidebar']['bg_color_hover_is_gradient'] ?? ''),
         "--sidebar-submenu-default-font-color" => get_field('menu_colors', 'options')['submenu_sidebar']['default_font_color'],
         "--sidebar-submenu-hover-font-color" => get_field('menu_colors', 'options')['submenu_sidebar']['font_color_hover'],
         "--sidebar-submenu-default-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_sidebar']['default_bg_color'], get_field('menu_colors', 'options')['submenu_sidebar']['default_bg_color_is_gradient']),
-        "--sidebar-submenu-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_sidebar']['bg_color_hover'], get_field('menu_colors', 'options')['submenu_sidebar']['bg_color_hover_is_gradient']),
+        "--sidebar-submenu-hover-bg-color" => getBgColor(get_field('menu_colors', 'options')['submenu_sidebar']['bg_color_hover'], get_field('menu_colors', 'options')['submenu_sidebar']['bg_color_hover_is_gradient'] ?? ''),
     )
 );
 

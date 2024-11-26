@@ -18,7 +18,8 @@ class EnqueueHelper
      */
     public static function getVersion($path, $default = '1.0.0')
     {
-        return sha1_file($path) ? substr($hash, -8, -1) : $default;
+        $hash = sha1_file($path);
+        return $hash ? substr($hash, -8, -1) : $default;
     }
 
     /**
