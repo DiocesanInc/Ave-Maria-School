@@ -326,7 +326,7 @@ $genericCss->addCssRule(
 );
 
 $genericCss->addCssRule(
-    "footer a:hover",
+    "footer a:hover, footer a:focus, footer a:active",
     array(
         "color" => get_field("footer_link_color_hover", "options"),
         "text-decoration" => get_field("footer_link_text_decoration_hover", "options")
