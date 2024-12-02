@@ -70,7 +70,8 @@ class TemplateController
     public static function getPageHeader()
     {
         global $post;
-        $postImage = wp_get_attachment_image_url(get_post_meta($post->ID, '_listing_image_id')[0], 'large');
+        $featuredImage = get_post_meta($post->ID, '_listing_image_id')[0] ?? '';
+        $postImage = wp_get_attachment_image_url($featuredImage, 'large') ? wp_get_attachment_image_url($featuredImage, 'large') : get_field('default_featured_image', 'options');
         $bkgd = get_field('default_featured_image', 'options');
 
         if (is_search()) {
@@ -90,7 +91,7 @@ class TemplateController
             $title = get_queried_object()->cat_name;
         } elseif (is_single()) {
             $title = get_the_category()[0]->cat_name ? get_the_category()[0]->cat_name : get_the_title();
-            $bkgd = $postImage ? $postImage : get_field('default_featured_image', 'options');
+            $bkgd = $postImage ;//? $postImage : get_field('default_featured_image', 'options');
         } else {
             $bkgd = has_post_thumbnail() ? get_the_post_thumbnail_url()/*$postImage*/ : get_field('default_featured_image', 'options');
             $title = get_the_title();

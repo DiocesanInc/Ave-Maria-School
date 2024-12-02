@@ -253,7 +253,10 @@ class StylesHelper extends EnqueueHelper
      */
     private static function _enqueueStyle($handle, $src = "", $deps = array(), $version = \false, $media = "all")
     {
-        $version = self::getVersion($src);
+        // $version = self::getVersion($src);
+        // self::INCLUDE_MIN ?
+        //     self::_enqueueStyleMin($handle, $src, $deps, $version, $media) :
+        //     wp_enqueue_style($handle, $src, $deps, $version, $media);
         self::INCLUDE_MIN ?
             self::_enqueueStyleMin($handle, $src, $deps, $version, $media) :
             wp_enqueue_style($handle, $src, $deps, $version, $media);
