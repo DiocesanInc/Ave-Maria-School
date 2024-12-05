@@ -139,7 +139,7 @@ $genericCss->addCssRule(
         "color" => get_field("page_header", "options")["font_color"] ?? '',
         "font-weight" => get_field("page_header", "options")["font_weight"] ?? '',
         "font-style" => get_field("page_header", "options")["font_style"] ?? '',
-        "font-family" => "var(--font-" . get_field("page_header", "options")["font_family"] ?? '' . ")",
+        "font-family" => "var(--font-" . get_field("page_header", "options")["font_family"] . ")",
     )
 );
 
@@ -302,12 +302,12 @@ $genericCss->addCssRule(
  * FOOTER COLORS
  */
 /** Footer */
-$genericCss->addCssRule(
-    "footer",
-    array(
-        "background-color" => get_field("footer_bg_color", "options")
-    )
-);
+// $genericCss->addCssRule(
+//     "footer",
+//     array(
+//         "background-color" => "var(--clr-" . get_field("footer_background_color", "options") . ")"
+//     )
+// );
 
 // $genericCss->addCssRule(
 //     "footer, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6",
@@ -337,8 +337,8 @@ $genericCss->addCssRule(
 $genericCss->addCssRule(
     "footer .site-info",
     array(
-        "background-color" => get_field("site_info_bg_color", "options"),
-        "color" => get_field("site_info_font_color", "options")
+        "background-color" => get_field("site_info_background_color", "options"),
+        "color" => get_field("site_info_text_color", "options")
     )
 );
 

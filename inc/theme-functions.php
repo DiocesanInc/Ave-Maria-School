@@ -80,42 +80,42 @@ if (!function_exists('if_the_content')) {
     }
 }
 
-if (!function_exists('ministry_featured_image')) {
-    /**
-     * Return a Featured Image for Ministries, with multiple fallbacks.
-     *
-     * @param integer $id.
-     * @return string.
-     */
-    function ministry_featured_image($id = null)
-    {
-        if (has_post_thumbnail($id)) {
-            return get_the_post_thumbnail_url($id);
-        } elseif (get_field('ministry_featured_image', 'options') && get_field('ministry_featured_image', 'options')['url']) {
-            return get_field('ministry_featured_image', 'options')['url'];
-        } else {
-            return get_field('default_featured_image', 'options')['url'];
-        }
-    }
-}
+// if (!function_exists('ministry_featured_image')) {
+//     /**
+//      * Return a Featured Image for Ministries, with multiple fallbacks.
+//      *
+//      * @param integer $id.
+//      * @return string.
+//      */
+//     function ministry_featured_image($id = null)
+//     {
+//         if (has_post_thumbnail($id)) {
+//             return get_the_post_thumbnail_url($id);
+//         } elseif (get_field('ministry_featured_image', 'options') && get_field('ministry_featured_image', 'options')['url']) {
+//             return get_field('ministry_featured_image', 'options')['url'];
+//         } else {
+//             return get_field('default_featured_image', 'options')['url'];
+//         }
+//     }
+// }
 
-if (!function_exists('ministry_taxonomy_image')) {
-    /**
-     * Return a Taxonomy Image for Ministries, with multiple fallbacks.
-     *
-     * @param integer $id.
-     * @return string.
-     */
-    function ministry_taxonomy_image($q_obj = null)
-    {
-        $q_obj = $q_obj === null ? get_queried_object() : $q_obj;
-        if (get_field('ministry_group_image', $q_obj->taxonomy . '_' . $q_obj->term_id)) {
-            return get_field('ministry_group_image', $q_obj->taxonomy . '_' . $q_obj->term_id)['url'] ? get_field('ministry_group_image', $q_obj->taxonomy . '_' . $q_obj->term_id)['url'] : get_field('ministry_featured_image', 'options')['url'];
-        } else {
-            return get_field('ministry_featured_image', 'options') ? get_field('ministry_featured_image', 'options')['url'] : get_field('default_featured_image', 'options');
-        }
-    }
-}
+// if (!function_exists('ministry_taxonomy_image')) {
+//     /**
+//      * Return a Taxonomy Image for Ministries, with multiple fallbacks.
+//      *
+//      * @param integer $id.
+//      * @return string.
+//      */
+//     function ministry_taxonomy_image($q_obj = null)
+//     {
+//         $q_obj = $q_obj === null ? get_queried_object() : $q_obj;
+//         if (get_field('ministry_group_image', $q_obj->taxonomy . '_' . $q_obj->term_id)) {
+//             return get_field('ministry_group_image', $q_obj->taxonomy . '_' . $q_obj->term_id)['url'] ? get_field('ministry_group_image', $q_obj->taxonomy . '_' . $q_obj->term_id)['url'] : get_field('ministry_featured_image', 'options')['url'];
+//         } else {
+//             return get_field('ministry_featured_image', 'options') ? get_field('ministry_featured_image', 'options')['url'] : get_field('default_featured_image', 'options');
+//         }
+//     }
+// }
 
 if (!function_exists("add_search_form")) {
     function add_search_form($items, $args)
