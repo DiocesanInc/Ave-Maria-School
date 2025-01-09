@@ -139,7 +139,7 @@ $genericCss->addCssRule(
         "color" => get_field("page_header", "options")["font_color"] ?? '',
         "font-weight" => get_field("page_header", "options")["font_weight"] ?? '',
         "font-style" => get_field("page_header", "options")["font_style"] ?? '',
-        "font-family" => "var(--font-" . get_field("page_header", "options")["font_family"] . ")",
+        "font-family" => get_field("page_header", "options")["font_family"] ? "var(--font-" . get_field("page_header", "options")["font_family"] . ")" : '',
     )
 );
 
