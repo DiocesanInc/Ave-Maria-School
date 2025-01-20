@@ -90,7 +90,8 @@ class TemplateController
         } elseif (get_query_var('cat')) {
             $title = get_queried_object()->cat_name;
         } elseif (is_single()) {
-            $title = get_the_category()[0]->cat_name ? get_the_category()[0]->cat_name : get_the_title();
+            $cat = get_the_category()[0] ?? '';
+            $title = $cat->cat_name ? $cat->cat_name : get_the_title();
             $bkgd = $postImage ;//? $postImage : get_field('default_featured_image', 'options');
         } else {
             $bkgd = has_post_thumbnail() ? get_the_post_thumbnail_url()/*$postImage*/ : get_field('default_featured_image', 'options');

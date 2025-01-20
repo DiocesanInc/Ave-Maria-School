@@ -2115,7 +2115,7 @@ acf_add_local_field_group(array(
 			'name' => 'accordion_colors',
 			'aria-label' => '',
 			'type' => 'group',
-			'instructions' => 'Note: Colors will also apply to tabs and Ministry Group dropdown.',
+			'instructions' => 'Note: Colors will also apply to tabs.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
