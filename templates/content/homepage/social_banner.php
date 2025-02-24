@@ -19,10 +19,6 @@ use Celine\Theme\Controllers\TemplateController;
   get_template_part('template-parts/components/featured','socialcontent');
  else: ?>
 <div class="social-banner banner-container teaser-box">
-    <div class="banner-image-wrapper" <?php echo TemplateController::animate("fade-up",50); ?>>
-      <?= do_shortcode(get_field('instagram_id'));?>
-    </div>
-
     <div class="teaser-content-wrapper <?php echo "$bgColor $fontColor"?>" <?php echo TemplateController::animate("fade-left",50); ?>>
         <div class="teaser-content-wrapper-inner">
             <?php if (get_field('social_title')) : ?>
@@ -44,5 +40,9 @@ use Celine\Theme\Controllers\TemplateController;
             <?php endif; ?>
         </div>
     </div>
+    <div class="banner-image-wrapper" <?php echo TemplateController::animate("fade-up",50); ?>>
+      <?= do_shortcode(get_field('instagram_id'));?>
+    </div>
+
 </div>
 <?php endif;?>

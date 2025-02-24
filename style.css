@@ -4,7 +4,7 @@
  Author:       Diocesan
  Author URI:   https://diocesan.com
  Description:  Ave Maria School Theme
- Version:      1.0.6.2
+ Version:      1.0.7
  License:      GNU General Public License v3 or later, provided without any warranties—whether express or implied—and provided without any guarantees of fitness for a particular purpose or merchantability.
  License URI:  https://www.gnu.org/licenses/gpl-3.0.html
  Tags:         custom-background, custom-logo, custom-menu, Diocesan, DPI, featured-images, responsive-layout, threaded-comments, translation-ready
@@ -2604,6 +2604,13 @@ button {
   z-index: 0;
   border-radius: 30px;
 }
+.page-template-homepage .banner-container.top-banner .teaser-content-wrapper .mass-times-title {
+  margin: 0;
+}
+.page-template-homepage .banner-container.top-banner .teaser-content-wrapper .mass-time {
+  display: flex;
+  flex-direction: column;
+}
 .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content {
   font-size: var(--fs-700);
   text-align: unset;
@@ -2618,7 +2625,7 @@ button {
 }
 .page-template-homepage .banner-container.social-banner {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   box-shadow: none;
 }
 .page-template-homepage .banner-container.social-banner .links-container {
@@ -2629,8 +2636,12 @@ button {
   border-radius: 0 10px 10px 0;
   width: 90%;
 }
-.page-template-homepage .banner-container.social-banner .teaser-content-wrapper .teaser-content {
+.page-template-homepage .banner-container.social-banner .teaser-content-wrapper .teaser-content-wrapper-inner {
+  position: relative;
+}
+.page-template-homepage .banner-container.social-banner .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-content {
   height: auto;
+  text-align: unset;
 }
 .page-template-homepage .banner-container.social-banner .banner-image-wrapper {
   margin: -10% 10% auto;
@@ -2668,6 +2679,7 @@ button {
 .page-template-homepage .banner-container.social-banner .envira-gallery-wrap .envira-gallery-item-inner .envira-gallery-link img {
   border-radius: 25px 0 25px 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -2680,7 +2692,7 @@ button {
     /* End Social Banner */
   }
   .page-template-homepage .banner-container.social-banner {
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
   .page-template-homepage .banner-container.social-banner .envira-gallery-wrap {
     margin: auto auto auto 0;
@@ -2690,16 +2702,25 @@ button {
     margin: 20px auto 0;
   }
   .page-template-homepage .banner-container.social-banner .banner-image-wrapper {
-    width: 50%;
-    margin: auto 5vw auto 0%;
+    width: 66.6666666667%;
+    margin: auto 1vw auto 0%;
   }
   .page-template-homepage .banner-container.social-banner .teaser-content-wrapper {
-    width: 50%;
+    margin-right: 0;
+    width: 33.3333333333%;
     border-radius: 0 20px 20px 0;
-    padding: 0rem 1.5rem 0px;
+    padding: 0;
+  }
+  .page-template-homepage .banner-container.social-banner .teaser-content-wrapper::before {
+    width: 60vw;
+    height: 100%;
+    background: var(--clr-primary);
+    position: absolute;
+    content: "";
+    border-radius: 0 20px 20px 0;
   }
   .page-template-homepage .banner-container.social-banner .teaser-content-wrapper .teaser-content-wrapper-inner {
-    padding: 0rem 10rem 0rem 2vw;
+    padding: 0rem 0rem 0rem 2vw;
     margin: auto 0;
     min-height: 0;
   }
@@ -2709,140 +2730,6 @@ button {
   .page-template-homepage .banner-container.social-banner .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-content {
     font-size: 22px;
     margin: 0;
-  }
-  .page-template-homepage .banner-container .banner-image-wrapper {
-    width: 45%;
-    justify-content: center;
-    z-index: 1;
-  }
-  .page-template-homepage .banner-container .teaser-img {
-    border-radius: var(--border-radius);
-    -o-object-fit: cover;
-       object-fit: cover;
-    height: 90%;
-    box-shadow: var(--box-shadow);
-    min-width: 500px;
-  }
-  .page-template-homepage .banner-container .teaser-content-wrapper {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-  }
-  .page-template-homepage .banner-container .teaser-content-wrapper p {
-    font-size: 20px;
-    margin-top: 0;
-  }
-  .page-template-homepage .banner-container .teaser-content-wrapper .teaser-content-wrapper-inner {
-    min-height: 100%;
-  }
-  .page-template-homepage .banner-container .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-title {
-    font-weight: 400;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .page-template-homepage .banner-container.top-banner {
-    display: flex;
-    margin-right: 0;
-    margin-left: 11%;
-  }
-  .page-template-homepage .banner-container.top-banner .banner-image-wrapper {
-    margin-bottom: 0%;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-  }
-  .page-template-homepage .banner-container.top-banner .banner-image-wrapper .teaser-img {
-    box-shadow: var(--box-shadow);
-    margin: auto 0 auto 10%;
-  }
-  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper {
-    padding-top: 0%;
-    margin-left: 0%;
-    position: relative;
-    z-index: 0;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-    width: 100%;
-  }
-  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-content {
-    font-weight: 700;
-    font-size: 30px;
-    height: auto;
-    margin: 17px auto 10px;
-  }
-  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .links-container {
-    flex-direction: row;
-  }
-  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .links-container .the-button + .the-button {
-    margin-top: 0;
-    margin-left: 2rem;
-  }
-  .page-template-homepage .banner-container.social-banner .teaser-content-wrapper .teaser-content-wrapper-inner {
-    padding: 4rem 10rem 4rem 8vw;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-content {
-    font-size: 40px;
-  }
-}
-.page-template-homepage .banner-container.top-banner {
-  box-shadow: none;
-  position: relative;
-  margin-left: 5%;
-  margin-right: 5%;
-  display: block;
-}
-.page-template-homepage .banner-container.top-banner .banner-image-wrapper {
-  width: auto;
-  margin-bottom: -20%;
-}
-.page-template-homepage .banner-container.top-banner .banner-image-wrapper img {
-  aspect-ratio: 370/305;
-}
-.page-template-homepage .banner-container.top-banner .teaser-content-wrapper {
-  padding: 20% 60px 60px;
-  margin-left: 10%;
-  position: relative;
-  border-radius: 30px;
-}
-.page-template-homepage .banner-container.top-banner .teaser-content-wrapper .mass-times-title {
-  margin: 0;
-}
-.page-template-homepage .banner-container.top-banner .teaser-content-wrapper .mass-time {
-  display: flex;
-  flex-direction: column;
-}
-.page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content {
-  text-align: unset;
-}
-.page-template-homepage .banner-container .links-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.page-template-homepage .banner-container .links-container .the-button + .the-button {
-  margin-top: 2rem;
-}
-@media screen and (min-width: 1024px) {
-  .page-template-homepage .banner-container {
-    display: flex;
-    min-height: 25rem;
-    box-shadow: none;
-    /* Start Social Banner */
-    /* End Social Banner */
-  }
-  .page-template-homepage .banner-container.social-banner {
-    flex-direction: row-reverse;
-  }
-  .page-template-homepage .banner-container.social-banner .banner-image-wrapper {
-    width: 100%;
-  }
-  .page-template-homepage .banner-container.social-banner .teaser-content-wrapper {
-    border-radius: 0 20px 20px 0px;
-    margin-right: -25%;
-    width: 100%;
   }
   .page-template-homepage .banner-container .banner-image-wrapper {
     width: 45%;
@@ -2875,9 +2762,6 @@ button {
   .page-template-homepage .banner-container .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-title {
     font-weight: 400;
   }
-  .page-template-homepage .banner-container .teaser-content-wrapper .teaser-content-wrapper-inner .links-container {
-    flex-direction: row;
-  }
   .page-template-homepage .banner-container .teaser-content-wrapper .teaser-content-wrapper-inner .links-container .the-button + .the-button {
     margin-top: 0;
     margin-left: 2rem;
@@ -2903,11 +2787,31 @@ button {
     padding-top: 0%;
     margin-left: 0%;
     position: relative;
+    z-index: 0;
     border-radius: var(--border-radius) 0 0 var(--border-radius);
+    width: 100%;
   }
   .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-content {
+    font-weight: 700;
+    font-size: 30px;
     height: auto;
     margin: 0.83em auto;
+  }
+  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .links-container {
+    flex-direction: row;
+  }
+  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .links-container .the-button + .the-button {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+  .page-template-homepage .banner-container.social-banner .teaser-content-wrapper .teaser-content-wrapper-inner {
+    padding: 4rem 0rem 4rem 8vw;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .page-template-homepage .banner-container.top-banner .teaser-content-wrapper .teaser-content-wrapper-inner .teaser-content {
+    font-size: 40px;
   }
 }
 .page-template-homepage .featured-content {
